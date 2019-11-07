@@ -1,0 +1,6 @@
+FemtosatMem	KEYWORD1
+begin	KEYWORD2
+Test	KEYWORD2
+Ready	KEYWORD2
+Save	KEYWORD2
+SetFile	KEYWORD2
