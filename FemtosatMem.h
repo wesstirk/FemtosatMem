@@ -4,9 +4,11 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-#define MEM_MODULE_I2C_ADDRESS 0xf0
+#define MEM_MODULE_I2C_ADDRESS 0xf0 //arbitrarily chosen
 
-#define MESSAGE_MAX_LENGTH 256
+#define MESSAGE_MAX_LENGTH 256 //to be similar to the radio library
+
+#define DEFAULT_WAIT_INTERVAL 5 // an arbitrary time to give it time to wait. 
 
 class FemtosatMem
 {
@@ -66,8 +68,12 @@ class FemtosatMem
 
     /*
      * Does the waiting and continuosly checks if the memory module is ready to receive more input.
+	 
+	 waitTime is how long it should wait for. 
+	 
+	 waitInterval is the delay time between tries. 
      */
-    bool ErrorCheckingWait(int waitTime);
+    bool ErrorCheckingWait(int waitTime, int waitInterval=DEFAULT_WAIT_INTERVAL);
 
     uint8_t I2C_ADDRESS;
   

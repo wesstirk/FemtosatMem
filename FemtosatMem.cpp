@@ -114,7 +114,7 @@ bool FemtosatMem::Save(void* buffer, size_t bufferSize, bool errorChecking, int 
  * Returns true if the memory module is good for communicating
  * False otherwise .
  */
-bool FemtosatMem::ErrorCheckingWait(int waitTime)
+bool FemtosatMem::ErrorCheckingWait(int waitTime, int waitInterval)
 {
   int initTime = millis(); //find the initial time from starting.
   while(millis() - initTime <= waitTime) //keep trying to reach the memory module until the time is up. 
@@ -123,6 +123,7 @@ bool FemtosatMem::ErrorCheckingWait(int waitTime)
     {
       return true;
     }
+	delay(waitInterval);
   }
   return false; //if after all of that time it still isn't ready, then return the false flag. 
 }
