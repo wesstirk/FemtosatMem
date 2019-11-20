@@ -4,7 +4,7 @@
  * This will be test code for the FemtosatMem Library.
  * It should verify that the hardware is active and that all functions work. 
  * 
- * Last updated November 6, 2019 by Hunter Hoffman
+ * Last updated November 20, 2019 by Hunter Hoffman
  * 
  */
 
